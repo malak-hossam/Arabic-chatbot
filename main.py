@@ -8,7 +8,7 @@ from langchain.memory import ConversationBufferMemory
 app = FastAPI()
 
 # إعداد Gemini
-genai.configure(api_key="api_key")
+genai.configure(api_key=GOOGLE_API_KEY)
 model = genai.GenerativeModel("gemini-2.5-flash")
 
 # الذاكرة
