@@ -10,8 +10,6 @@ It interacts with students, answers questions, generates grammar exercises, eval
 - [Features](#features)
 - [Project Structure](#project-structure)
 - [Prerequisites](#prerequisites)
-- [Setup](#setup)
-- [Run Locally](#run-locally)
 - [API Usage](#api-usage)
 - [Docker](#docker)
 - [Configuration Notes](#configuration-notes)
@@ -44,47 +42,6 @@ It interacts with students, answers questions, generates grammar exercises, eval
 - Python 3.9+ (recommended)
 - A valid **Google Gemini API key** (set as an environment variable)
 - Git (for cloning the repo)
-
----
-
-## Setup
-1. **Clone the repository**
-   
-       git clone https://github.com/<USERNAME>/arabic-chatbot-gemini-langchain.git
-       cd arabic-chatbot-gemini-langchain
-
-2. **Create and activate a virtual environment**
-   
-       python -m venv .venv
-       # Windows:
-       .venv\Scripts\activate
-       # macOS/Linux:
-       source .venv/bin/activate
-
-3. **Install dependencies**
-   
-       pip install -r requirements.txt
-
-4. **Configure your Gemini API key (recommended via environment variable)**
-   
-       # Windows (PowerShell)
-       setx GOOGLE_API_KEY "YOUR_KEY_HERE"
-       
-       # macOS/Linux (temporary for current shell)
-       export GOOGLE_API_KEY="YOUR_KEY_HERE"
-
-   > Note: If `main.py` hardcodes the key, replace it with reading from the environment for security.
-
----
-
-## Run Locally
-- **Start the API server**
-  
-      uvicorn main:app --reload
-
-- **Default URL**
-  
-      http://127.0.0.1:8000
 
 ---
 
@@ -130,7 +87,6 @@ It interacts with students, answers questions, generates grammar exercises, eval
 ## Configuration Notes
 - **Environment Variable**: `GOOGLE_API_KEY` (preferred) for Gemini access.
 - **Timeouts/Reliability**: External microservices may fail; the app returns friendly error messages when dependencies are unreachable.
-- **Security**: Do **not** commit API keys to the repository. Use `.env` files or CI/CD secrets.
 
 ---
 
